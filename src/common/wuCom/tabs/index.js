@@ -17,9 +17,9 @@
          }
      }
 
-     switchTabs (key,name) {
-         this.setState({activeKey:key});
-         this.props.onChange && this.props.onChange(key,name)
+     switchTabs (item) {
+         this.setState({activeKey:item.key});
+         this.props.onChange && this.props.onChange(item)
      }
 
      render () {
@@ -44,7 +44,7 @@
                                 <li
                                     key={item.key}
                                     className={Number(item.key) === Number(activeKey) ? 'active' : ''}
-                                    onClick={() => this.switchTabs(item.key,item.name)}
+                                    onClick={() => this.switchTabs(item)}
                                 >
                                     {item.name}
                                 </li>
